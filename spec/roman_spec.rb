@@ -17,15 +17,15 @@ require_relative '../RomanAddition'
 
 describe "conversion to sticks" do
   it "given X return IIIIIIIIII" do
-    expect(RomanAddition.new.convert_sticks("X")).to eql("IIIIIIIIII")
+    expect(RomanAddition.new("X","V").convert_to_sticks("X")).to eql("IIIIIIIIII")
   end
   it "given XV return IIIIIIIIIIIIIII" do
-    expect(RomanAddition.new.convert_sticks("XV")).to eql("IIIIIIIIIIIIIII")
+    expect(RomanAddition.new("X","V").convert_to_sticks("XV")).to eql("IIIIIIIIIIIIIII")
   end
 end
 
 describe "convert stick result to numerals" do
   it "given sticks IIIIIIIIIIIIIII calculate value as XV" do
-    expect(RomanAddition.new.calc_result("IIIIIIIIIIIIIII")).to eql("XV")
+    expect(RomanAddition.new("X","V").back_to_numerals("IIIIIIIIIIIIIII")).to eql("XV")
   end
 end
